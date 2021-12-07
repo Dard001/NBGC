@@ -1,0 +1,43 @@
+*{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-family: calibri;
+    font-size: 100%;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    height: 4rem;
+    padding-right: 2%;
+}
+header a{
+    color: white;
+    text-decoration: none;
+}
+main{
+    height: 60rem;
+    background-image: url('../images/BG.jpg');
+    background-color: pink;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+}
+main section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 10rem;
+}

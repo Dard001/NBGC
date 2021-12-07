@@ -1,0 +1,264 @@
+.site-title{
+    font-size: 200%;
+    font-size-adjust: .25;
+    color: white;
+    padding-left: 1%;
+    word-wrap: break-word;
+    width: 20%;
+}
+header input{
+    border-radius: 6px;
+    width: 34%;
+    height: 2rem;
+    padding-right: 1%;
+    padding-left: 1%;
+    background-color: white;
+    text-decoration: none;
+}
+header input[type=button], header input[type=submit], header input[type=reset] {
+  border: none;
+  cursor: pointer;
+  width: auto;
+  min-width: 100px;
+  font-weight: bold;
+}
+.flex-navbar{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 40%;
+}
+.flex-login{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 40%;
+}
+.page-title{
+    font-size: 150%;
+    font-weight: bold;
+    padding-top: 2rem;
+}
+.password-reset{
+    
+}
+.page-description{
+    font-weight: bold;
+    padding-top: 2rem;
+}
+.page-content{
+    padding-top: 2rem;
+}
+.footer-text{
+    color: white;
+}
+.footer-text a{
+    color: white;
+    text-decoration: none;
+}
+.footer-copyright{
+    font-size: small;
+    font-style: italic;
+    text-align: center;
+}
+.main-layout{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+.main-column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    margin: .5rem;
+    padding: .5rem;
+    height: 75px;
+}
+.main-center-column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    margin: .5rem;
+    padding: .5rem;
+}
+.main-left-column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 15%;
+    margin: .5rem;
+    padding: 1rem;
+}
+.main-right-column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 25%;
+    margin: .5rem;
+    padding: 1rem;
+}
+.main-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: left;
+}
+.album-layout{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.album-column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    margin: .5rem;
+    padding: .5rem;
+}
+.album-column input{
+    border-radius: 6px;
+    width: 33%;
+    padding: 3px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.album-column input[type=button], .album-column input[type=submit], .album-column input[type=reset] {
+    width: 10%;
+}
+.admin-layout{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin-top: 1%;
+    width: 50%;
+}
+.admin-column{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    margin-bottom: 2%;
+}
+.admin-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 100%;
+ }
+.admin-row p{
+    width: 30%;
+}
+.admin-row form{
+    width: 70%;
+}
+.admin-row input{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 6px;
+    width: 45%;
+    padding: 3px;
+}
+.admin-row input[type=button], .admin-row input[type=submit], .admin-row input[type=reset] {
+    width: 20%;
+    margin-left: 5%;
+}
+.main-marquee{
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.main-marquee p{
+    position: static;
+    text-align: center;
+    transform: translateY(100%);
+    animation: main-marquee 25s linear infinite;
+}
+@keyframes main-marquee {
+ 0%   { 
+ transform: translateY(200%);     
+ }
+ 100% { 
+ transform: translateY(-1000%); 
+ }
+}
+.album-area{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 1%;
+}
+.album-photo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    background-color: rgb(255, 255, 255, 0.6);
+    margin: 1%;
+}
+.album-photo img{
+    width: 75%;
+
+}
+.widget{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(255, 255, 255, 0.6);
+    width: 30rem;
+    height: auto;
+    margin: .5rem;
+    padding: 1rem;
+}
+.widget input{
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 6px;
+    width: 15rem;
+    padding: .35rem;
+    margin: 0.25rem;
+}
+widget input[type=button], input[type=submit], input[type=reset] {
+  cursor: pointer;
+  background-color: white;
+  font-weight: bold;
+}
+.spacer{
+    height: 1rem;
+}
+img:hover {
+  box-shadow: 0 0 2px 1px rgb(0, 0, 0, 0.7);
+}
+
