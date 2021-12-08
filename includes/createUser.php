@@ -1,5 +1,7 @@
 <?php
-    if(isset($_POST['create-user'])){
+    session_start();
+
+    if(isset($_POST['create-user']) && isset($_SESSION['userId'])){
 
         $uid = $_POST['uid'];
 
@@ -48,6 +50,8 @@
                 }
             }
         }
+    } else {
+        echo 'Nope nope nope';
     }
                         
 ?>

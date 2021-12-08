@@ -1,8 +1,9 @@
 <?php
-    if(isset($_POST['password-submit'])){
+    session_start();
+
+    if(isset($_POST['password-submit']) && isset($_SESSION['userId'])){
         
-        $SESSION = $Utilities->getSession();
-        $uid = $SESSION['userId'];
+        $uid = $_SESSION['userId'];
         $password_old = $_POST['password_old'];
         $password_new = $_POST['password_new'];
         $password_retype = $_POST['password_retype'];
@@ -56,12 +57,25 @@
                 } else if ($pwdCheck == true){
                     $hashedPwd = password_hash($password_new, PASSWORD_DEFAULT);
                     
-                    $Utilities->changePW($uid, $hashedPwd);
+                    $conn = $DB->getDBConnection();
+
+                    $stmt = $conn->stmt_init();
+                    $query = "UPDATE accounts SET pwd=?, pwd_change=? WHERE uid=?";
+
+                    if(!$stmt->prepare($query)){
+                        header("Location: ../index.php?error=PREPAREsqlerror");
+                    } else {
+                        $stmt->bind_param('sis', $hashedPwd, 0, $uid);
+                        $stmt->execute();
+                        header("Location: ../index.php?login=changepwsuccess");
+                    }  
                    
-                    header("Location: ../index.php?login=changepwsuccess");
+                    
                     $conn->close();
                     exit(); 
                 }
             }
         }
+    } else {
+        echo 'Nope nope nope';
     }
