@@ -116,33 +116,55 @@ header input[type=button], header input[type=submit], header input[type=reset] {
     flex-wrap: wrap;
     text-align: left;
 }
-.album-layout{
+
+.album-layout {
     display: flex;
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
+    width: 95%;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: rgb(255, 255, 255, 0.6);
 }
-.album-column{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.6);
-    width: 100%;
-    margin: .5rem;
-    padding: .5rem;
-}
-.album-column input{
+.album-layout input{
     border-radius: 6px;
     width: 33%;
-    padding: 3px;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin: .5%;
+    padding: .25%;
 }
-.album-column input[type=button], .album-column input[type=submit], .album-column input[type=reset] {
+.album-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+.album-photo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    background-color: rgb(255, 255, 255, 0.6);
+    margin: 1%;
+}
+.album-photo img {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    max-height: 190px;
+    max-width: 190px;
+}
+.album-layout input[type=button], .album-layout input[type=submit], .album-layout input[type=reset] {
     width: 10%;
 }
+
 .admin-layout{
     display: flex;
     flex-direction: column;
@@ -204,35 +226,6 @@ header input[type=button], header input[type=submit], header input[type=reset] {
  100% { 
  transform: translateY(-1000%); 
  }
-}
-.album-area{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 1%;
-}
-.album-photo{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 200px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    background-color: rgb(255, 255, 255, 0.6);
-    margin: 1%;
-}
-.album-photo img{
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    max-height: 190px;
-    max-width: 190px;
-
 }
 .widget{
     display: flex;

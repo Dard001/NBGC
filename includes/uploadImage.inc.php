@@ -1,10 +1,10 @@
 <?php
     session_start();
-    $photo_dir = '../photos/';
+    $photo_dir = $_SERVER['DOCUMENT_ROOT']."/NBGC/photos/";
     $target_file = $photo_dir . basename($_FILES['image-file']['name']);
     $uploadOk = 1;
     $filetype = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    $filename= htmlspecialchars(basename( $_FILES['image-file']['name']));
+    #$filename= htmlspecialchars(basename( $_FILES['image-file']['name']));
     #$name = strstr($filename, '.', true);
     $name = rand(10000, 100000000000);
     $description = $_POST['image-description'];
@@ -59,7 +59,7 @@
                 $stmt->execute();
 
                 if (move_uploaded_file($_FILES['image-file']['tmp_name'], $photo_dir.$name.".".$filetype)) {
-                    header("Location: ../photoalbum.php?success=fileuploaded-".htmlspecialchars(basename( $_FILES['image-file']['name']))."");
+                    header("Location: ../photoalbum.php?fileuploaded=".$name.".jpg");
                     error_log("FILE UPLOADED!");
 
                   } else {

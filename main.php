@@ -3,10 +3,11 @@
       
         <?php
             if(isset($_SESSION['userId'])){
-                echo    '
+        ?>
                         <div class="main-layout"> 
                             <div class="main-column">
-                                <div class="main-marquee">';
+                                <div class="main-marquee">
+                                <?php
                                     $conn = $Utilities->getDBConnection();
                                     $sql = "SELECT CONCAT(date,' - ',event) from events ORDER BY id DESC LIMIT 10;";
                                     $stmt = mysqli_stmt_init($conn);
@@ -24,7 +25,7 @@
                                             }
                                         }
                                     }
-                                  echo  '
+                                ?>
                                 </div>
                             </div>
                         </div>
@@ -42,10 +43,10 @@
                         </div>
                         
 
-                        ';
+        <?php
             } else {
                 echo "Clever girl, but you're not supposed to be here";
             }
-      ?>  
+        ?>  
     </section>
 </main>

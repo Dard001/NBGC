@@ -1,6 +1,7 @@
 <?php
     if(isset($_SESSION['userId'])){
-        echo '<main>
+?>
+        <main>
                 <section>
                     <div class="page-title">
                     You need to change your password.
@@ -14,17 +15,9 @@
                         </form>
                     </div>
                 </section>
-            </main>';
+            </main>;
+<?php
     } else {
-        echo '<main>
-            <section>
-                <div class="page-content">
-                    Clever girl, but you don\'t belong here.
-                </div>
-            </section>
-        </main>';
+        echo 'Clever girl, but you don\'t belong here';
     }
 ?>
-
-
-
