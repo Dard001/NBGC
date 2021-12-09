@@ -10,6 +10,7 @@
     $description = $_POST['image-description'];
     
     if (isset($_SESSION['userId'])){
+        
         if(isset($_POST['upload-image'])){
             $check = getimagesize($_FILES['image-file']['tmp_name']);
             if($check !== false){
@@ -49,6 +50,7 @@
             $DB = null;
             $sql = "INSERT INTO photos (name, description, uid) VALUES (?, ?, ?)";
             $stmt = $conn->stmt_init();
+            $uid = $_SESSION['userId'];
 
             if(!$stmt->prepare($sql)){
                 header("Location: ../photoalbum.php?error=sqlerror");
