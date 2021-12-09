@@ -65,7 +65,9 @@
                     if(!$stmt->prepare($query)){
                         header("Location: ../index.php?error=PREPAREsqlerror");
                     } else {
-                        $stmt->bind_param('sis', $hashedPwd, 0, $uid);
+                        $sss = 'sss';
+                        $zero = '0';
+                        $stmt->bind_param($sss, $hashedPwd, $zero, $uid);
                         $stmt->execute();
                         header("Location: ../index.php?login=changepwsuccess");
                     }  
