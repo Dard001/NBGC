@@ -47,4 +47,6 @@
                 }
             }
         }
+    } else {
+         #log some shit
     }

@@ -101,7 +101,7 @@
                 </div>';
         <?PHP
             } else {
-                echo "Clever girl, but you're not supposed to be here";      
+                require "logout.php";      
             }
         ?>
         </section>

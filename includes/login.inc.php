@@ -63,8 +63,6 @@
         } 
     } 
     else {
-        header("Location: ../index.php?error=clevergirl");
-        $conn->close();
-        exit();
+        #log some shit
     }
 ?>

@@ -5,16 +5,7 @@
         private $DBHandler;
         private $SESSION;
         private $SERVER;
-        
-        public function setSession($session, $server){
-            $this->SESSION = $session;
-            $this->SERVER = $server;
-        }
-        
-        public function getSession(){
-            return $SESSION;
-        }
-        
+               
         public function __construct(){
             $this->DBHandler = new dbHandler();
         }

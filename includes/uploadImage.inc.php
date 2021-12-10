@@ -4,8 +4,6 @@
     $target_file = $photo_dir . basename($_FILES['image-file']['name']);
     $uploadOk = 1;
     $filetype = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    #$filename= htmlspecialchars(basename( $_FILES['image-file']['name']));
-    #$name = strstr($filename, '.', true);
     $name = rand(10000, 100000000000);
     $description = $_POST['image-description'];
     
@@ -18,26 +16,22 @@
                 $uploadOk = 1;
             } else {
                 header("Location: ../photoalbum.php?error=notanimage");
-                error_log("File is not an image");
                 $uploadOk = 0;
             }
         }
 
         if (file_exists($target_file)){
             header("Location: ../photoalbum.php?error=fileexists");
-            error_log("File already exists");
             $uploadOk = 0;
         }
 
         if ($_FILES["image-file"]["size"] > 5000000){
             header("Location: ../photoalbum.php?error=filetolarge");
-            error_log("File too large");
             $uploadOk = 0;        
         }
 
-        if($filetype != "jpg") {
-          header("Location: ../photoalbum.php?error=filenotjpg=".$filetype);
-          error_log("Sorry, only JPG files are allowed");
+        if($filetype != "jpg" && $filetype != "jpeg" && $filetype != "png" && $filetype != "gif") {
+          header("Location: ../photoalbum.php?error=wrongfiletype=".$filetype);
           $uploadOk = 0;
         }
 
@@ -50,19 +44,18 @@
             $DB = null;
             $sql = "INSERT INTO photos (name, description, uid) VALUES (?, ?, ?)";
             $stmt = $conn->stmt_init();
-            $uid = $_SESSION['userId'];
+            $id = $_SESSION['Id'];
 
             if(!$stmt->prepare($sql)){
                 header("Location: ../photoalbum.php?error=sqlerror");
                 $conn->close();
                 exit(); 
             } else {
-                $stmt->bind_param("sss", $name, $description, $uid);
-                $stmt->execute();
-
                 if (move_uploaded_file($_FILES['image-file']['tmp_name'], $photo_dir.$name.".".$filetype)) {
-                    header("Location: ../photoalbum.php?fileuploaded=".$name.".jpg");
-                    error_log("FILE UPLOADED!");
+                    $name .= ".".$filetype;
+                    $stmt->bind_param("sss", $name, $description, $id);
+                    $stmt->execute();
+                    header("Location: ../photoalbum.php?fileuploaded=".$name);
 
                   } else {
                     header("Location: ../photoalbum.php?error=othererror");
@@ -71,5 +64,5 @@
             }
         }
     } else {
-        echo 'Ixnay on the hombre.';
+        #log some shit
     }

@@ -18,6 +18,6 @@
             </main>;
 <?php
     } else {
-        echo 'Clever girl, but you don\'t belong here';
+        require "logout.php";
     }
 ?>

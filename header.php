@@ -40,8 +40,6 @@
                                     
                     echo    '</div>
                      </div><!--End Dropdown-->';
-                    } else {
-                        echo 'Clever girl, but you don\'t belong here.';
                     }
                     ?>
                 </div><!--End Navbar-->

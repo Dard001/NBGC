@@ -51,7 +51,7 @@
             }
         }
     } else {
-        echo 'Nope nope nope';
+         #log some shit
     }
                         
 ?>
