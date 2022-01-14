@@ -8,7 +8,6 @@
                     require "changepw.php";
                 } else {
                     require "main.php";
-                    require"footer.php";
                 }
             } 
             else {

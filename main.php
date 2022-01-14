@@ -9,7 +9,7 @@
                                 <div class="main-marquee">
                                 <?php
                                     $conn = $Utilities->getDBConnection();
-                                    $sql = "SELECT CONCAT(date,' - ',event) from events ORDER BY id DESC LIMIT 10;";
+                                    $sql = "SELECT CONCAT(date,' - ',event) from events ORDER BY id DESC LIMIT 20;";
                                     $stmt = mysqli_stmt_init($conn);
 
                                     if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -35,7 +35,7 @@
                                 <div class="main-row">Row-1-2</div>
                                 <div class="main-row">Row-1-3</div>
                             </div>
-                            <div class="main-center-column">Column2
+                            <div class="main-right-column">Column2
                                 <div class="main-row">Row-2-1</div>
                                 <div class="main-row">Row-2-2</div>
                                 <div class="main-row">Row-2-3</div>

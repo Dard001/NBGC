@@ -10,12 +10,13 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: #353535;
+    color: #FFFFFF;
     height: 4rem;
     padding-right: 2%;
 }
 header a{
-    color: white;
+    color: #FFFFFF;
     text-decoration: none;
 }
 main{

@@ -1,0 +1,52 @@
+.links-layout{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.links-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 75%;
+    margin: .5rem;
+    padding: .5rem;
+    height: 100%;
+}
+.links-column form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.links-column form input[type=text]{
+    width: 25%;
+}
+
+.category-title {
+    font-weight: bold;
+    font-size: 125%;
+}
+.link-layout {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: space-between;
+}
+.link-description {
+    width: 20%;
+}
+.link-url {
+    width: 70%;
+}
+.link-remove {
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+.link-remove:hover {
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+}

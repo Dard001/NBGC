@@ -5,7 +5,11 @@
 
         <div class="page-content">
             <div class="widget">
-            Coming soon!  Or never....I dunno, I don't have much time for this, so, some day....
+                <form action="./includes/login.inc.php" method="post">
+                        <input type="text" name="uid" placeholder="Username...">
+                        <input type="password" name="pwd" placeholder="Password...">
+                        <input type="submit" name="login-submit" value="LOGIN">
+                    </form>
             </div>
         </div>
     </section>
