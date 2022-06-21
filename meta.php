@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="css/content.css?v=1.0" />
         <link rel="stylesheet" href="css/calendar.css?v=1.0" />
         <link rel="stylesheet" href="css/links.css?v=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+
     </head>
     
     <?php

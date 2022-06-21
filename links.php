@@ -2,7 +2,6 @@
     require "meta.php";
     require "header.php";
 ?>
-
         <main>
             <section> 
                 <?php
@@ -20,7 +19,7 @@
                         $result_categories = $stmt_categories->get_result();  
                         $fetched_categories = $result_categories->fetch_all();
                 ?>
-
+                <!------------ Begin 'Add A Link' Section ------------>
                 <div class="links-layout"> 
                     <div class="links-column">
                         <p class="category-title">Add A link</p>
@@ -42,8 +41,9 @@
                                     <input type="submit" name="add-link" value="Add Link">
                                 </form> 
                     </div>
-                    <div class="links-column">
 
+                    <!------------ Begin Links Section ------------>
+                    <div class="links-column">
                     <?php
                     
                         foreach($fetched_categories as $category){
@@ -71,8 +71,8 @@
                                     $linkhtml .=  '<div class="link-url">';
                                     $linkhtml .=  '<a target="_blank" href="'.$link['link'].'">'.$link['link'].'</a>';
                                     $linkhtml .=  '</div>';
-                                    $linkhtml .= '<div class="link-remove">X';
-                                    $linkhtml .= '</div></div>';
+                                    $linkhtml .= '<a class="link-remove" formaction="./includes/dellink.inc.php">X';
+                                    $linkhtml .= '</a></div>';
                             }
                             echo $titlehtml;
                             echo $linkhtml;

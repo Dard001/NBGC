@@ -1,7 +1,8 @@
 
     <body>
-        <script src="js/scripts.js"></script>
         <header>
+
+
             <div class="site-title">
                 NBGC Clubhouse
             </div>

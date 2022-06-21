@@ -6,20 +6,18 @@
         <main>
             <section> 
                 <?php
-                if(isset($_SESSION['userId'])){
+                    if(isset($_SESSION['userId'])){
                 ?>
-                    <div class="main-layout"> 
-                        <div class="calendar-layout">
 
-                            <?php   
-                                include './includes/calendar.inc.php';
-
-                                $calendar = new NBGCCalendar();
-
-                                echo $calendar->show();
-                            ?>
-                        </div>
+                    <div class="container"> 
+                        <?php
+                            require "calendar-modal.php";
+                            require "calendar-app.php";
+                        ?>
                     </div>
+
+                    <script src="scripts/calendar-script.js" type="text/javascript"></script>
+
                     <?php 
                         } else {
                             require "logout.php";

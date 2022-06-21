@@ -1,16 +1,17 @@
 <?php
-class dbHandler{
-    private $servername = "localhost";
-    private $serverport = "3306";
-    private $dBUsername = "nbgc";
-    private $dBPassword = "";
-    private $dBName = "nbgc";
-    
+class dbHandler{  
     #Establish the connection to DB
     #Test of connection was successful
     #Return the successful connection
     private function setupDBConnection(){
-        $conn = mysqli_connect($this->servername, $this->dBUsername, $this->dBPassword, $this->dBName);
+
+        //Use this in test
+        require "C:/xampp/htdocs/dbconfig.php";
+
+        //Swap to this in production
+        //require "/home/bitnami/dbconfig.php";
+
+        $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
     
         if (!$conn){
             die("Connection failed: ".mysqli_connect_error());      
